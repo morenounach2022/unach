@@ -9,7 +9,7 @@ struct jugadores{
 	char categoria[50];
 	char equipo[50];
 	
-} jugadores[30];
+} jugadores[20];
 
 int main()
 {
@@ -40,7 +40,7 @@ int main()
 					if((ref = fopen("c:/unach/liga.txt","w"))==NULL)
 					printf("El archivo no fue creado");
 					else{
-        				  while (x < 2 ){
+        				  while (x < 6 ){
                 				printf( "\nNo_jugador: " );
 								scanf( "%d", &jugadores[x].No_jugador );
 		    					printf( "\nNombre: " );
@@ -70,27 +70,29 @@ int main()
                 			break;
                 
             case 2:
-            		if((ref=fopen("C:/UNACH/LIGA.txt", "r"))==NULL){
+            	if((ref=fopen("C:/UNACH/LIGA.txt", "r"))==NULL){
 		 			printf("EL archivo no fue creado\n");
 		
 	  				 }
 						ref=fopen("C:/UNACH/LIGA.txt","r");
-						while(x<2){
+						while(x<6){
+						fgets(jugadores[x].categoria,20,ref);
 						fscanf(ref,"%d",&jugadores[x].No_jugador);
 						fgets(jugadores[x].nombre,20,ref);
 						fgets(jugadores[x].apellido,20,ref);
 						fscanf(ref,"%d",&jugadores[x].edad);
-						fgets(jugadores[x].categoria,20,ref);
 						fgets(jugadores[x].equipo,20,ref);
 						x++;
 						}//fin while
 	   					x=0;
       
-      					while(x <2){
+      					while(x <6){
 	  
-      					printf("%d %s %s %d %s %s\n",jugadores[x].No_jugador,jugadores[x].nombre,jugadores[x].apellido,jugadores[x].edad,jugadores[x].categoria,jugadores[x].equipo);
+      					printf("\n%s %d %s %s %d %s \n",jugadores[x].categoria,jugadores[x].No_jugador,jugadores[x].nombre,jugadores[x].apellido,jugadores[x].edad,jugadores[x].equipo);
       					x++;
       					}
+                	
+						system("pause>nul"); 
 			     
                           break;
          
@@ -100,20 +102,21 @@ int main()
 		
 	  				 }
 						ref=fopen("C:/UNACH/LIGA.txt","r");
-						while(x<2){
+						while(x<6){
+						fgets(jugadores[x].equipo,20,ref);
 						fscanf(ref,"%d",&jugadores[x].No_jugador);
 						fgets(jugadores[x].nombre,20,ref);
 						fgets(jugadores[x].apellido,20,ref);
 						fscanf(ref,"%d",&jugadores[x].edad);
 						fgets(jugadores[x].categoria,20,ref);
-						fgets(jugadores[x].equipo,20,ref);
+						
 						x++;
 						}//fin while
 	   					x=0;
       
-      					while(x <2){
+      					while(x <6){
 	  
-      					printf("%d %s %s %d %s %s\n",jugadores[x].No_jugador,jugadores[x].nombre,jugadores[x].apellido,jugadores[x].edad,jugadores[x].categoria,jugadores[x].equipo);
+      					printf("\n%s %d %s %s %d %s \n",jugadores[x].equipo,jugadores[x].No_jugador,jugadores[x].nombre,jugadores[x].apellido,jugadores[x].edad,jugadores[x].categoria);
       					x++;
       					}
                 	
