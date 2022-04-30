@@ -1,0 +1,49 @@
+import numpy
+import matplotlib.pyplot as plt
+import numpy as np
+
+x= np.array([1, 2, 3, 4, 5])
+y=[];
+
+
+for i in range(5):
+    
+     y.append(int(input("ingrese su numero: ")))
+
+
+mayor =y[0]
+# Recorrer y comparar
+for numero in y:
+    if numero > mayor:
+        mayor = numero
+   
+print("El número mayor de los números ingresados es:", mayor)
+
+menor =y[0]
+# Recorrer y comparar
+for numero in y:
+    if numero < menor:
+        menor = numero
+   
+print("El número menor de los números ingresados es:", menor)
+
+#Promedio
+mean = numpy.mean(y)
+print("El promedio de los números es:", mean)
+
+cuenta_par,cuenta_impar = 0, 0
+
+for num in y: 
+      
+    
+    if num % 2 == 0: 
+        cuenta_par += 1
+  
+    else: 
+        cuenta_impar += 1
+        
+print("La lista de valores posee",cuenta_impar,"números impares.")
+
+plt.bar(x, y, align="center")
+plt.title("Mi Primera Grafica de Barras")
+plt.show()
