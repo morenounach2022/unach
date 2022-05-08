@@ -1,0 +1,23 @@
+import numpy as np
+
+dtype=[('Nombre',(np.str_,40)),('Semestre',np.int32),('Promedio',np.float64,),
+       ('Matricula',(np.str_,8))]
+
+sArr= np.array([('Ramiro',1,8.42,'BX145598'),('Alexis',2,7.79,'BX236789'),
+('Adrian',2,9.56,'BX512385'),('Adal',5,9.99,'BX987654'),
+('Daniel',2,8.12,'BX939518'),('Carlos',3,7.25,'BX420304'),
+('Thomas',1,6.93,'BX908070'),('Felipe',8,9.97,'BX605065'),
+('Eduardo',2,8.91,'BX765432'),('Tabo',5,7.68,'BX236000')],dtype=dtype)
+
+modArr = np.sort(sArr, order='Promedio')
+
+# Reverse the sorted array
+reverse_array = modArr[::-1]
+print(sArr)
+print('Sorted Array')
+print(reverse_array)
+print("Los 3 primeros que recibiran la beca: ")
+print(reverse_array[0][0]," con promedio de: ",reverse_array[0][2])
+print(reverse_array[1][0]," con promedio de: ",reverse_array[1][2])
+print(reverse_array[2][0]," con promedio de: ",reverse_array[2][2])
+ 
